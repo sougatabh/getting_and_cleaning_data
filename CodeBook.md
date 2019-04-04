@@ -36,7 +36,7 @@ Group the activity column of merged_ds as "act_group", then rename each levels w
 * act_group : factored activity column of ds 
 
 ## 6. Output tidy data
-In this part, ds is melted to create tidy data. It will also add [mean of] to each column labels for better description. Finally output the data as "tidy_data.txt"
+In this part, merged_ds is melted to create tidy data. It will also add [mean of] to each column labels for better description. Finally output the data as "tidy_data.txt"
 * base_ds : melted tall and skinny ds
 * second_independent_ds :  base_ds which has means of each variables
 
