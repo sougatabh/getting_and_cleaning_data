@@ -57,7 +57,7 @@ names(merge_activity) <- 'activity'
 
 #Merge subject activity and dataset
 
-ds<- cbind(merge_subject,merge_activity, merged_ds)
+merged_ds<- cbind(merge_subject,merge_activity, merged_ds)
 
 
 # 3. Uses descriptive activity names to name the activities in the data set
@@ -70,7 +70,7 @@ ds$activity <- act_group
 
 #5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-base_ds <- melt(ds,(id.vars=c("subject","activity")))
+base_ds <- melt(merged_ds,(id.vars=c("subject","activity")))
 second_independent_ds <- dcast(base_ds, subject + activity ~ variable, mean)
 names(second_independent_ds)[-c(1:2)] <- paste("[mean of]" , names(second_independent_ds)[-c(1:2)] )
 write.table(second_independent_ds, "tidy_data.txt", sep = ",")

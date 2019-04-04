@@ -22,17 +22,17 @@ Create a vector of only mean and std labels, then use the vector to subset dataS
 * merged_ds : at the end of this step, merged_ds would only contain mean and std variables
 
 ## 3. Changing Column label of dataSet
-Create a vector of "clean" feature names by getting rid of "()" at the end. Then, will apply that to the dataSet to rename column labels.
+Create a vector of "clean" feature names by getting rid of "()" at the end. Then, will apply that to the merged_ds to rename column labels.
 * clean_feature_name : a vector of "clean" feature names 
 
 ## 4. Adding Subject and Activity to the dataSet
-Combine test data and train data of subject and activity, then give descriptive lables. Finally, bind with dataSet. At the end of this step, dataSet has 2 additonal columns 'subject' and 'activity' in the left side.
+Combine test data and train data of subject and activity, then give descriptive lables. Finally, bind with merged_ds. At the end of this step, merged_ds has 2 additonal columns 'subject' and 'activity' in the left side.
 * merge_subject : bind of subject_train and subject_test
 * merge_activity : bind of y_train and y_test
-*ds : bind merge_subject,merge_activity and merged_ds
+
 
 ## 5. Rename ID to activity name
-Group the activity column of merged_ds as "act_group", then rename each levels with 2nd column of activity_levels. Finally apply the renamed "act_group" to ds's activity column.
+Group the activity column of merged_ds as "act_group", then rename each levels with 2nd column of activity_levels. Finally apply the renamed "act_group" to merged_ds's activity column.
 * act_group : factored activity column of ds 
 
 ## 6. Output tidy data
